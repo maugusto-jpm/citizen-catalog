@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "run migrations",
+      "type": "shell",
+      "group": "build",
+      "linux": {
+        "command": "mvn clean flyway:migrate -Dflyway.configFiles=src/main/resources/fly-away-config.conf"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+  ]
+}

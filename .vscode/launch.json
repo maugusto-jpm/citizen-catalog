@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-OnlineBillingApplication<online-billing>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.onlineBilling.OnlineBillingApplication",
+      "projectName": "online-billing",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
