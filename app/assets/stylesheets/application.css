@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+.page-with-margin {
+  margin: 20px;
+}
+
+.search-button {
+  height: 3em;
+  margin: auto 0 0 auto;
+  vertical-align: bottom;
+  margin-bottom: 0.5em;
+  float: right;
+}

@@ -55,6 +55,8 @@ group :development do
 
   # Code linter
   gem 'rubocop', '1.39.0'
+
+  gem 'erb_lint'
 end
 
 group :test do

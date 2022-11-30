@@ -71,6 +71,13 @@ GEM
     ast (2.4.2)
     backport (1.2.0)
     benchmark (0.2.0)
+    better_html (2.0.1)
+      actionview (>= 6.0)
+      activesupport (>= 6.0)
+      ast (~> 2.0)
+      erubi (~> 1.4)
+      parser (>= 2.4)
+      smart_properties
     bindex (0.8.1)
     bootsnap (1.15.0)
       msgpack (~> 1.2)
@@ -96,6 +103,13 @@ GEM
       reline (>= 0.3.1)
     diff-lcs (1.5.0)
     e2mmap (0.1.0)
+    erb_lint (0.3.1)
+      activesupport
+      better_html (>= 2.0.1)
+      parser (>= 2.7.1.4)
+      rainbow
+      rubocop
+      smart_properties
     erubi (1.11.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -202,6 +216,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    smart_properties (1.17.0)
     solargraph (0.47.2)
       backport (~> 1.2)
       benchmark
@@ -265,6 +280,7 @@ DEPENDENCIES
   bundler-audit
   capybara
   debug
+  erb_lint
   importmap-rails
   jbuilder
   pg (~> 1.1)

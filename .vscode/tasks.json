@@ -1,0 +1,96 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Up containers",
+      "type": "shell",
+      "group": "build",
+      "linux": {
+        "command": "docker-compose up -d"
+      },
+      "presentation": {
+        "revealProblems": "onProblem",
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Down containers",
+      "type": "shell",
+      "group": "build",
+      "linux": {
+        "command": "docker-compose down"
+      },
+      "presentation": {
+        "revealProblems": "onProblem",
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Install dependencies",
+      "type": "shell",
+      "group": "build",
+      "linux": {
+        "command": "bundle install"
+      },
+      "presentation": {
+        "revealProblems": "onProblem",
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Run migrations",
+      "type": "shell",
+      "group": "build",
+      "linux": {
+        "command": "bundle exec rails db:migrate"
+      },
+      "presentation": {
+        "revealProblems": "onProblem",
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Check for lint errors",
+      "type": "shell",
+      "group": "build",
+      "linux": {
+        "command": "bundle exec rubocop --parallel"
+      },
+      "presentation": {
+        "revealProblems": "onProblem",
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Check for security issues",
+      "type": "shell",
+      "group": "build",
+      "linux": {
+        "command": "bundle exec brakeman -q -w2"
+      },
+      "presentation": {
+        "revealProblems": "onProblem",
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Check for dependency issues",
+      "type": "shell",
+      "group": "build",
+      "linux": {
+        "command": "bundle exec bundler-audit --update   "
+      },
+      "presentation": {
+        "revealProblems": "onProblem",
+        "reveal": "always",
+        "panel": "shared"
+      }
+    }
+  ]
+}

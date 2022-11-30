@@ -6,6 +6,8 @@
     "castwide.solargraph",
     "connorshea.vscode-ruby-test-adapter",
     "misogi.ruby-rubocop",
-    "SimonBo.rails-go-to-test"
+    "SimonBo.rails-go-to-test",
+    "aki77.rails-routes",
+    "manuelpuyol.erb-linter"
 	]
 }
