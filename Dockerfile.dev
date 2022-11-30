@@ -1,0 +1,21 @@
+FROM ruby:3.0.2
+
+# Rails environment variables
+ENV RAILS_ENV development
+
+RUN mkdir /citizen-catalog
+WORKDIR /citizen-catalog
+
+# Install system dependencies
+RUN apt-get update && \
+  apt-get install -y build-essential libpq-dev curl locales git
+
+# Configure default encoding used by the Rails application, locales were installed on previous RUN
+ENV LANGUAGE en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+RUN locale-gen en_US.UTF-8 && localedef -i en_US -f UTF-8 en_US.UTF-8
+
+RUN echo "alias rspec='RAILS_ENV=test rspec'" >> /root/.bashrc
+
+EXPOSE 3000 5000

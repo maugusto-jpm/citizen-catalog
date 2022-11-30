@@ -1,10 +1,7 @@
 AllCops:
+  TargetRubyVersion: 3.0.2
   NewCops: enable
-  Exclude:
-    - 'bin/*'
-    - 'config/**/*'
-    - 'db/**/*'
-    - 'node_modules/**/*'
+  SuggestExtensions: false
 
 Layout/LineLength:
   Max: 120
@@ -12,13 +9,16 @@ Layout/LineLength:
 Metrics/CyclomaticComplexity:
   Max: 15
 
-Documentation:
+Style/Documentation:
   Enabled: false
 
 Style/Lambda:
   EnforcedStyle: literal
 
 Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Lint/MissingSuper:
   Enabled: false
 
 Layout/ArgumentAlignment:

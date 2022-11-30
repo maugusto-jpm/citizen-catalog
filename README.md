@@ -1,24 +1,25 @@
-# README
+# Citizen Catalog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple citizen catalog for some county.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+Run on terminal the folowing command:
 
-* System dependencies
+```bash
+# Creates and start containers
+docker-compose up -d
 
-* Configuration
+# Open an terminal on apps container
+docker-compose exec app bash
 
-* Database creation
+# Install Rails dependencies
+bundle install
 
-* Database initialization
+# Create databases
+rails db:create
 
-* How to run the test suite
+rails server
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Application will be running on <http://localhost:5000>
