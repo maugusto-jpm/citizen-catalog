@@ -53,12 +53,44 @@
         "panel": "shared"
       }
     },
+
+    {
+      "label": "Run test migrations",
+      "type": "shell",
+      "group": "build",
+      "options": {
+        "env": {
+          "RAILS_ENV": "test"
+        }
+      },
+      "linux": {
+        "command": "bundle exec rails db:migrate"
+      },
+      "presentation": {
+        "revealProblems": "onProblem",
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
     {
       "label": "Check for lint errors",
       "type": "shell",
       "group": "build",
       "linux": {
         "command": "bundle exec rubocop --parallel"
+      },
+      "presentation": {
+        "revealProblems": "onProblem",
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Check and fix lint errors",
+      "type": "shell",
+      "group": "build",
+      "linux": {
+        "command": "bundle exec rubocop --parallel --autocorrect-all"
       },
       "presentation": {
         "revealProblems": "onProblem",

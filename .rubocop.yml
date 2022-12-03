@@ -1,7 +1,15 @@
+inherit_mode:
+  merge:
+    - Exclude
+
 AllCops:
   TargetRubyVersion: 3.0.2
   NewCops: enable
   SuggestExtensions: false
+  Exclude:
+    - vendor/**'
+    - 'bin/*'
+    - 'db/schema.rb'
 
 Layout/LineLength:
   Max: 120
@@ -12,11 +20,11 @@ Metrics/CyclomaticComplexity:
 Style/Documentation:
   Enabled: false
 
-Style/Lambda:
-  EnforcedStyle: literal
-
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Style/Lambda:
+  EnforcedStyle: literal
 
 Lint/MissingSuper:
   Enabled: false
