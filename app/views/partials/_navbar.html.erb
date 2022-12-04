@@ -18,8 +18,8 @@
         <%= link_to 'Lista de munícipes', citizens_path, class: 'nav-link' %>
       </li>
 
-      <li class="nav-item <%= route_active?(cities_path) %>">
-        <%= link_to 'Lista de cidades', cities_path, class: 'nav-link' %>
+      <li class="nav-item <%= route_active?(new_citizen_path) %>">
+        <%= link_to 'Criar cidadão', new_citizen_path, class: 'nav-link' %>
       </li>
 
     </ul>

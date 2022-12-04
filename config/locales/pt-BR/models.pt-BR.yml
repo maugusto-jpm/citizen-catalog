@@ -1,0 +1,15 @@
+'pt-BR':
+  activerecord:
+    attributes:
+      citizen:
+        status_list:
+          active: Ativo
+          inactive: Inativo
+    errors:
+      attributes:
+        cpf:
+          cpf_must_be_valid: CPF precisa ser válido
+          presence: CPF precisa ser informado
+          uniqueness: CPF precisa ser único dentre os cidadãos
+        cns:
+          cns_must_be_valid: CNS precisa ser válido

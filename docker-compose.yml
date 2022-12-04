@@ -18,7 +18,7 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     ports:
-      - 5000:3000
+      - 5000:5000
     volumes:
       - .:/citizen-catalog
       - $HOME/.ssh/id_rsa:/root/.ssh/id_rsa:ro
@@ -28,4 +28,5 @@ services:
       - db:postgres
     environment:
       DB_HOST: postgres
+      PORT: 5000
     command: "/bin/sh -c 'while true; do sleep 60; done'"

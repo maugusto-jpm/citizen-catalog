@@ -5,28 +5,28 @@
   <div class="card mb-4">
 
     <div class="card-body">
-      <%= form_tag(citizens_path, method: :post, class: 'w-100') do %>
+      <%= form_tag(citizens_path, method: :get, class: 'w-100') do %>
 
         <div class="row w-100">
 
           <div class="col-md-3 form-group">
             <%= label_tag :name, 'Nome' %>
-            <%= text_field :name, params[:name], class: 'form-control' %>
+            <input type="text" name="name" id="name" class="form-control" value="<%= params[:name] %>">
           </div>
 
           <div class="col-md-3 form-group">
             <%= label_tag :cpf, 'CPF' %>
-            <%= text_field :cpf, params[:cpf], class: 'form-control' %>
+            <input type="text" name="cpf" id="cpf" class="form-control" value="<%= params[:cpf] %>" pattern="\d{11}">
           </div>
 
           <div class="col-md-3 form-group">
             <%= label_tag :cns, 'CNS' %>
-            <%= text_field :cns, params[:cns], class: 'form-control' %>
+            <input type="text" name="cns" id="cns" class="form-control" value="<%= params[:cns] %>" pattern="\d{15}">
           </div>
 
           <div class="col-md-3 form-group">
             <%= label_tag :email, 'E-mail' %>
-            <%= text_field :email, params[:email], class: 'form-control' %>
+            <input type="email" name="email" id="email" class="form-control" value="<%= params[:email] %>">
           </div>
 
         </div>
@@ -34,20 +34,37 @@
 
           <div class="col-md-3 form-group">
             <%= label_tag :phone, 'Telefone' %>
-            <%= text_field :phone, params[:phone], class: 'form-control' %>
+            <input type="phone" name="phone" id="phone" class="form-control" value="<%= params[:phone] %>">
           </div>
 
           <div class="col-md-3 form-group">
             <%= label_tag :status, 'Status' %>
-            <%= text_field :status, params[:status], class: 'form-control' %>
+            <select name="status" id="status" class="form-control" value="<%= params[:status] %>">
+              <option value="">&lt;todos&gt;</option>
+              <option value="active" <%= 'selected' if params[:status] == 'active' %>>Ativo</option>
+              <option value="inactive" <%= 'selected' if params[:status] == 'inactive' %>>Inativo</option>
+            </select>
           </div>
 
           <%= button_tag "Pesquisar", class: "btn btn-secondary search-button" %>
         </div>
 
       <% end %>
+
     </div>
 
   </div>
+
+  <% if @citizens.empty? %>
+    <div style="margin-left: 15px">
+      <p style="margin-left: 15px">Não foram encontrados resultados</p>
+    </div>
+  <% else %>
+    <div style="margin-left: 15px; margin-bottom: 30px">
+
+    <%= render partial: 'citizen_list' %>
+
+    <%= paginate @citizens, theme: 'twitter-bootstrap-4' %>
+  <% end %>
 
 </div>

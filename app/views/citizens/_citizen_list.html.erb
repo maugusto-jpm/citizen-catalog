@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>CPF</th>
+      <th>Email</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @citizens.each |citizen| do %>
+    <tr>
+      <th><%= citizen.name %></th>
+      <th><%= CPF.new(citizen.cpf).formatted %></th>
+      <th><%= citizen.email %></th>
+      <th><%= citizen.status_translated %></th>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

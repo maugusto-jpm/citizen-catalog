@@ -37,6 +37,12 @@ gem 'bootsnap', require: false
 
 gem 'cpf_cnpj'
 
+gem 'kaminari'
+
+gem 'bootstrap4-kaminari-views'
+
+gem 'translate_enum'
+
 # Improve rails c
 gem 'pry-rails'
 
