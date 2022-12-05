@@ -1,0 +1,124 @@
+<div class="page-with-margin">
+
+  <h4>Criação de munícipes</h4>
+
+  <div class="card mb-4">
+
+    <div class="card-body">
+
+    <%= form_for :citizen, url: citizens_path do |citizen_form| %>
+
+      <div class="row w-100">
+        <div class="col-md-3 form-group">
+          <%= citizen_form.label :name, 'Nome' %>
+          <%= citizen_form.text_field :name, class: 'form-control', required: true %>
+        </div>
+
+        <div class="col-md-3 form-group">
+          <%= citizen_form.label :cpf, 'CPF' %>
+          <%= citizen_form.text_field :cpf, class: 'form-control', pattern: '\\d{11}', required: true %>
+        </div>
+
+        <div class="col-md-3 form-group">
+          <%= citizen_form.label :cns, 'CNS' %>
+          <%= citizen_form.text_field :cns, class: 'form-control', pattern: '\\d{15}', required: true %>
+        </div>
+
+        <div class="col-md-3 form-group">
+          <%= citizen_form.label :email, 'E-mail' %>
+          <%= citizen_form.text_field :email, class: 'form-control', required: true %>
+        </div>
+
+      </div>
+
+      <div class="row w-100">
+        <%= citizen_form.fields_for :address do |address_fields| %>
+
+          <div class="col-md-3 form-group">
+            <%= address_fields.label :street, 'Longradouro' %>
+            <%= address_fields.text_field :street, class: 'form-control', required: true %>
+          </div>
+
+          <div class="col-md-3 form-group">
+            <%= address_fields.label :neighborhood, 'Bairro' %>
+            <%= address_fields.text_field :neighborhood, class: 'form-control', required: true %>
+          </div>
+
+          <div class="col-md-3 form-group">
+            <%= address_fields.label :uf, 'UF' %>
+            <%= address_fields.text_field :uf, class: 'form-control', required: true %>
+          </div>
+
+          <div class="col-md-3 form-group">
+            <%= address_fields.label :complement, 'Complemento' %>
+            <%= address_fields.text_field :complement, class: 'form-control' %>
+          </div>
+
+        </div>
+        <div class="row w-100">
+
+          <div class="col-md-3 form-group">
+            <%= address_fields.label :zip_code, 'Código postal' %>
+            <%= address_fields.text_field :zip_code, class: 'form-control', required: true %>
+          </div>
+
+          <div class="col-md-3 form-group">
+            <%= address_fields.label :igbe_code, 'Código IBGE' %>
+            <%= address_fields.text_field :igbe_code, class: 'form-control' %>
+          </div>
+
+      <% end %>
+
+      <%= citizen_form.fields_for :phone do |address_fields| %>
+
+        <div class="col-md-3 form-group">
+          <%= citizen_form.label :number, 'Telefone com DDD' %>
+          <%= citizen_form.text_field :number, class: 'form-control', required: true %>
+        </div>
+
+        <div class="col-md-3 form-group">
+          <%= citizen_form.label :country_code_id, 'Código do país' %>
+          <%=
+            citizen_form.select :country_code_id,
+            options_from_collection_for_select(@country_codes, 'id', 'country_name'),
+            class: 'form-control',
+            required: true
+          %>
+        </div>
+
+      <% end %>
+
+      </div>
+
+      <div class="row w-100">
+
+        <div class="col-md-3 form-group">
+          <%= citizen_form.label :birthdate, 'Data de nascimento' %>
+          <%=
+            citizen_form.date_field :birthdate,
+            class: 'form-control',
+            max: Date.today - 5.years,
+            min: Date.today - 120.years
+          %>
+        </div>
+
+        <div class="col-md-4 form-group">
+          <%= citizen_form.label :photos, 'Fotos' %>
+          <%=
+            citizen_form.file_field :photos,
+            multiple: true,
+            accept: 'image/png,image/gif,image/jpeg',
+            class: 'form-control'
+          %>
+        </div>
+
+        <%= citizen_form.submit 'Salvar', class: 'btn btn-secondary align-self-end ml-auto' %>
+      </div>
+
+    <% end %>
+
+    </div>
+
+  </div>
+
+</div>

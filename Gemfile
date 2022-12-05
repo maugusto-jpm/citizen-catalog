@@ -43,6 +43,8 @@ gem 'bootstrap4-kaminari-views'
 
 gem 'translate_enum'
 
+gem "image_processing", ">= 1.2"
+
 # Improve rails c
 gem 'pry-rails'
 
